@@ -1,7 +1,7 @@
 # config_iBeacon_by_BLE_GAAT_v2
 
 - procedure for config iBeacon
-1- hold pin0 (GPIO_0) around 6 seconds to enter ibeacon config mode.
+1- hold pin0 (GPIO_0) around 6 seconds to enter ibeacon config mode.<br>
 2- LED (at GPIO_2) power on if esp32 is entering ibeacon config mode.
 
 ----iBeacon config mode----
