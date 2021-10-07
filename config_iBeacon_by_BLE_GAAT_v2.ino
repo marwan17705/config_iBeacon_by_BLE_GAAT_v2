@@ -387,19 +387,19 @@ void setup() {
 void display_menu_ibeacon_setting()
 {
     Serial.println("----iBeacon config mode----");
-    Serial.println("1- Go to CHARACTERISTIC: 4fafc201-1fb5-459e-8fcc-c5c9c331914bin");
+    Serial.println("1- Go to SERVICES: 4fafc201-1fb5-459e-8fcc-c5c9c331914bin");
     Serial.println("2- Write something in SERVICES");
-    Serial.print("SERVICES : ");
+    Serial.print("CHARACTERISTIC : ");
     Serial.print(CHARACTERISTIC_UUID_GATT);
     Serial.println(" to config major");
-    Serial.print("SERVICES : ");
+    Serial.print("CHARACTERISTIC : ");
     Serial.print(CHARACTERISTIC_UUID_GATT2);
     Serial.println(" to config minor");
-    Serial.print("SERVICES : ");
+    Serial.print("CHARACTERISTIC : ");
     Serial.print(CHARACTERISTIC_UUID_GATT3);
     Serial.println(" to config tx power");
     Serial.println("(help::  0:-12 dbm   0:-9 dbm   0:-6 dbm   0:-3 dbm   0:0 dbm   0:3 dbm   0:6 dbm   0:9 dbm)");
-    Serial.print("SERVICES : ");
+    Serial.print("CHARACTERISTIC : ");
     Serial.print(CHARACTERISTIC_UUID_GATT4);
     Serial.println(" to config time interval");
 }
