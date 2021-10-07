@@ -7,19 +7,9 @@
 #include <EEPROM.h>
 #include <stdio.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-uint8_t temprature_sens_read();
-//uint8_t g_phyFuns;
-
-#ifdef __cplusplus
-}
-#endif
-
 // See the following for generating UUIDs:
 // https://www.uuidgenerator.net/
+
 BLEAdvertising *pAdvertising;
 BLEServer *gattServer;
 BLEService *gattService;
@@ -294,11 +284,9 @@ void setBeacon() {
 
 void config_ibeacon()
 {
-  // Serial.println(millis()-timestamp);
   if (millis() - timestamp > 1000)
   {
     enter_cf = !enter_cf;
-    Serial.println(enter_cf);
     timestamp = millis();
   }
 }
@@ -361,10 +349,6 @@ void setup() {
   Serial.begin(115200);
   Serial.println("new started...");
   BLEDevice::init("");
-//  BLEDevice::init("config_onechat_ibeacon");
-
-//  init_gatt();
-
   // Create the BLE Server
   pAdvertising = BLEDevice::getAdvertising();
   setBeacon();
@@ -376,19 +360,13 @@ void setup() {
   digitalWrite(PIN_led, 1);
   //Serial.println("Advertizing started...");
   
-//   vTaskDelay( 300 / portTICK_PERIOD_MS );
-//  //  pAdvertising->stop();
-//  //  Serial.printf("enter deep sleep\n");
-//  if(!enter_cf)
-//    esp_deep_sleep(5e5);
-//  //  Serial.printf("in deep sleep\n");
 }
 
 void display_menu_ibeacon_setting()
 {
     Serial.println("----iBeacon config mode----");
-    Serial.println("1- Go to SERVICES: 4fafc201-1fb5-459e-8fcc-c5c9c331914bin");
-    Serial.println("2- Write something in SERVICES");
+    Serial.println("1- Go to SERVICE: 4fafc201-1fb5-459e-8fcc-c5c9c331914bin");
+    Serial.println("2- Write something in CHARACTERISTICS");
     Serial.print("CHARACTERISTIC : ");
     Serial.print(CHARACTERISTIC_UUID_GATT);
     Serial.println(" to config major");
@@ -402,6 +380,7 @@ void display_menu_ibeacon_setting()
     Serial.print("CHARACTERISTIC : ");
     Serial.print(CHARACTERISTIC_UUID_GATT4);
     Serial.println(" to config time interval");
+  
 }
 
 void loop() {
@@ -412,15 +391,15 @@ void loop() {
     if(enter_cf)
       break;
   }
-//  if(digitalRead(PIN_interupt)==LOW)
-//  {
-//    for(int i = 0 ; i< 10;i++)
-//    {
-//      vTaskDelay( 1000 / portTICK_PERIOD_MS );
-//      if(enter_cf)
-//        break;
-//    }
-//  }
+ if(digitalRead(PIN_interupt)==LOW)
+ {
+   for(int i = 0 ; i< 10;i++)
+   {
+     vTaskDelay( 1000 / portTICK_PERIOD_MS );
+     if(enter_cf)
+       break;
+   }
+ }
   
   if (!in_cf_mode && enter_cf)
   {
