@@ -14,3 +14,6 @@ CHARACTERISTIC : beb5483e-36e1-4688-b7f5-ea07361b26aa to config tx power<br>
 CHARACTERISTIC : beb5483e-36e1-4688-b7f5-ea07361b26ab to config time interval<br>
 
 3- again press pin0 (GPIO_0) to summit modification so that esp32 again broadcasts iBeacon.<br>
+
+
+
