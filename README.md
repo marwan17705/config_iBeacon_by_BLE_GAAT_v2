@@ -18,4 +18,5 @@
 3- again press pin0 (GPIO_0) to summit modification so that esp32 again broadcasts iBeacon.<br>
 
 
-
+this video shows current consumption for this code.<br>
+https://drive.google.com/file/d/1IEXIQkoHuYJqh5FI0LlDa1ys5c8VHH9N/view?usp=sharing
