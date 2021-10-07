@@ -20,3 +20,4 @@
 
 this video shows current consumption for this code.<br>
 https://www.youtube.com/watch?v=O3cVfEwkkng
+**(Click subtitle to display various modes.)
