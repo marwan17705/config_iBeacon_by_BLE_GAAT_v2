@@ -1,6 +1,6 @@
 # config_iBeacon_by_BLE_GAAT_v2
 
-- procedure for config iBeacon<br>
+- procedure for config (iBeacon or see video https://www.youtube.com/watch?v=2WuZhklZfvY)<br>
 
 
 1- hold pin0 (GPIO_0) around 6 seconds to enter ibeacon config mode.<br>
@@ -16,6 +16,7 @@
       CHARACTERISTIC : beb5483e-36e1-4688-b7f5-ea07361b26ab to config time interval
 
 3- again press pin0 (GPIO_0) to summit modification so that esp32 again broadcasts iBeacon.<br>
+
 
 
 this video shows current consumption for this code.<br>
